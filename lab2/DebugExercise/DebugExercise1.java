@@ -6,10 +6,8 @@ package DebugExercise;
  */
 public class DebugExercise1 {
     public static int divideThenRound(int top, int bottom) {
-//        if (top == Integer.MIN_VALUE) return Integer.MIN_VALUE;
-
         if (bottom == 0) {
-            throw new ArithmeticException("Division by zero is not allowed.");
+            throw new ArithmeticException("Division by zero!");
         }
         double quotient = (double)top / bottom;
         int result = (int) Math.round(quotient);
