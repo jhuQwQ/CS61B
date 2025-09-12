@@ -53,12 +53,28 @@ public class IntListExercises {
      *  the first digit of x.
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
-        int lastDigit = x % 10;
-        while (x > 10) {
-            x = x / 10;
+//        int lastDigit = x % 10;
+//        while (x > 10) {
+//            x = x / 10;
+//        }
+//        int firstDigit = x % 10;
+//        return firstDigit == lastDigit;
+        if (x < 0) return false;
+        int i = x;
+        int offset = 1;
+
+        while (i / offset >= 10) {
+            offset *= 10;
         }
-        int firstDigit = x % 10;
-        return firstDigit == lastDigit;
+        // 121 % 10 = 1
+        // 121 / 10 = 1
+        while (i > 0) {
+            if (i % 10 != i / offset) return false;
+            i = (i % offset) / 10; //51200 % 10000 = 1200/10
+            offset /= 100;
+        }
+
+        return true;
     }
 
     /**
