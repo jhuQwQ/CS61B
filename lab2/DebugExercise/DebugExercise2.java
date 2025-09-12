@@ -47,6 +47,14 @@ public class DebugExercise2 {
             return null;
         }
         int[] returnArray = new int[a.length];
+        if (a.length == 1) {
+            if (a[0] > b[0]) returnArray[0] = a[0];
+            else returnArray[0] = b[0];
+            return returnArray;
+        }
+
+
+
 //        for (int i = 0; i < a.length; i += 1) {
 //            int biggerValue = max(a[i], b[i]);
 //            returnArray[i] = biggerValue;
