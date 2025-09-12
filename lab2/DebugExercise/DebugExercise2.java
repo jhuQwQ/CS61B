@@ -47,11 +47,16 @@ public class DebugExercise2 {
             return null;
         }
         int[] returnArray = new int[a.length];
-        if (a.length == 1) {
-            if (a[0] > b[0]) returnArray[0] = a[0];
-            else returnArray[0] = b[0];
-            return returnArray;
+        // if (a.length == 1) {
+        //     returnArray[0] = a[0] > b[0] ? a[0] : b[0];
+        //     return returnArray;
+        // }
+
+        for (int i = 0; i < a.length; i++) {
+            returnArray[i] = a[i] > b[i] ? a[i] : b[i];
         }
+        return returnArray;
+        
 
 
 
@@ -59,13 +64,29 @@ public class DebugExercise2 {
 //            int biggerValue = max(a[i], b[i]);
 //            returnArray[i] = biggerValue;
 //        }
-        Arrays.sort(a);
-        Arrays.sort(b);
-        int i = 0;
-        for (int j = a.length / 2; i < a.length / 2; i++, j++) returnArray[i] = a[j];
-        for (int j = a.length / 2; i < a.length; i++, j++) returnArray[i] = b[j];
+//        Arrays.sort(a);
+//        Arrays.sort(b);
+//        int i = 0;
+//        for (int j = a.length / 2; i < a.length / 2; i++, j++) returnArray[i] = a[j];
+//        for (int j = a.length / 2; i < a.length; i++, j++) returnArray[i] = b[j];
+//
+//        return returnArray;
 
-        return returnArray;
+        // i = 0;
+        // int[] arr = new int[a.length * 2];
+        // for (int j = 0; j < a.length; i++, j++) {
+        //     arr[i] = a[j];
+        // }
+        // for (int j = 0; j < a.length; i++, j++) {
+        //     arr[i] = b[j];
+        // }
+        // Arrays.sort(arr);
+        // i = 0;
+        // for (int j = a.length; j < arr.length; i++, j++) {
+        //     returnArray[i] = arr[j];
+        // }
+//        return returnArray;
+
     }
 
     /** Returns the sum of all elements in x. */
