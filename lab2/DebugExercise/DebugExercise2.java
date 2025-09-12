@@ -1,5 +1,7 @@
 package DebugExercise;
 
+import java.util.Arrays;
+
 /**
  * Exercise to showcase the step over button.
  * Code adapted from https://stackoverflow.com/questions/4895173/bitwise-multiply-and-add-in-java and https://stackoverflow.com/questions/1533131/what-useful-bitwise-operator-code-tricks-should-a-developer-know-about
@@ -45,10 +47,15 @@ public class DebugExercise2 {
             return null;
         }
         int[] returnArray = new int[a.length];
-        for (int i = 0; i < a.length; i += 1) {
-            int biggerValue = max(a[i], b[i]);
-            returnArray[i] = biggerValue;
-        }
+//        for (int i = 0; i < a.length; i += 1) {
+//            int biggerValue = max(a[i], b[i]);
+//            returnArray[i] = biggerValue;
+//        }
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int i = 0;
+        for (int j = a.length / 2; i < a.length / 2; i++, j++) returnArray[i] = a[j];
+        for (int j = a.length / 2; i < a.length; i++, j++) returnArray[i] = b[j];
 
         return returnArray;
     }
